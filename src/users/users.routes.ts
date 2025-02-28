@@ -90,7 +90,7 @@ userRouter.put('/user/:id', async (req : Request, res: Response) => {
     
         const getUser = await database.findOne(req.params.id) 
     
-        if (lusername || !email || !password) { 
+        if (!username || !email || !password) { 
             return res.status(401).json({error: `Please provide all the required parameters..`}) 
         } 
     
