@@ -10,7 +10,7 @@ function loadUsers (): Users {
     const data = fs.readFileSync("./users.json", "utf-8") 
     return JSON.parse(data) 
   } catch (error) { 
-    console.log(`Error $(error)`) 
+    console.log(`Error ${error}`) 
     return {}
   } 
 } 
@@ -20,7 +20,7 @@ function saveUsers () {
     fs.writeFileSync("./users.json", JSON.stringify(users), "utf-8") 
     console.log("User saved successfully!") 
   } catch (error) { 
-    console.log(`Error: $(error)`) 
+    console.log(`Error: ${error}`) 
   }
 }
 
@@ -32,7 +32,7 @@ export const create = async (userData: UnitUser): Promise<UnitUser | null> => {
 
     let id = random() 
 
-    let check_user= await findOne(id); 
+    let check_user = await findOne(id); 
 
     while (check_user) {
         id = random() 

@@ -52,7 +52,7 @@ userRouter.post("/register", async (req: Request, res: Response) => {
         return res.status (StatusCodes.CREATED).json({newUser}  ) 
     
     } catch (error) { 
-        return res.status (StatusCodes. INTERNAL_SERVER_ERROR).json((error))
+        return res.status (StatusCodes. INTERNAL_SERVER_ERROR).json({error})
     }
 })
 
